@@ -22,7 +22,18 @@
                     [hoverable]="true"
         >
             <span class="tui-island__title">Вход в аккаунт</span>
-            <div class="tui-island__content">Для полного доступа нужно запровайдить доступ Messages</div>
+            <div class="tui-island__content">
+                Данный сервис предназначен для использования в рамках AS IS.
+                <br>
+                Кроме вас никто не несет ответственность за сохранность личных данных,
+                <br>
+                домашнего уюта и спокойной, размеренной жизни.
+            </div>
+            <div class="wf-meme">
+                <span *ngIf="isShown$| async" [@tuiFadeIn]="getAnimation()">
+                    Прекращайте охоту на Атлантов, из-за вас пропадают русалки
+                </span>
+            </div>
             <button tuiButton appearance="flat" class="tui-island__footer-button wf-foot-button" (click)="loginVK()">VK OpenAPI</button>
         </tui-island>
     </div>
