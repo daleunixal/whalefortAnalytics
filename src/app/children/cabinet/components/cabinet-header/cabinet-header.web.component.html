@@ -17,12 +17,37 @@
     tui-col_sm-4">
         <span class="tui-text_h3">WhalefortAnalytics</span>
     </div>
-    <div class="
+    <div *tuiLet="profile$ | async as profile" [tuiDropdownContext]="nestedMenu" class="
+    wf-avatar
     tui-col-offset_lg-2
     tui-col-offset_md-2
     tui-col_lg-2
     tui-col_md-2
     tui-col_sm-2">
-        <span class="tui-text">Тута будет профиль</span>
+        <ng-container *ngIf="profile" class="">
+            <tui-avatar [avatarUrl]="profile!.photo_200" [rounded]="true"></tui-avatar>
+            <span class="tui-text">{{profile!.last_name + ' ' + profile!.first_name}}</span>
+        </ng-container>
     </div>
 </ng-container>
+
+<ng-template #nestedMenu let-close="close" let-activeZone="activeZone">
+    <tui-data-list
+        role="menu"
+        tuiDataListDropdownManager
+        [tuiActiveZoneParent]="activeZone"
+        class="wf-context-avatar"
+    >
+        <button tuiOption
+                (click)="logout()"
+        >
+            Выйти из аккаунта
+            <tui-svg src="tuiIconExternalLarge"></tui-svg>
+        </button>
+
+        <button tuiOption (click)="copyToken()">
+            Скопировать токен
+            <tui-svg src="tuiIconCopyLarge"></tui-svg>
+        </button>
+    </tui-data-list>
+</ng-template>

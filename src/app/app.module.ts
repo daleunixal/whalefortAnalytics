@@ -7,6 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountModule } from './children/account/account.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AuthorizedGuard } from './guards/authorized.guard';
 
 @NgModule({
     declarations: [
@@ -14,6 +16,7 @@ import { AccountModule } from './children/account/account.module';
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         AppRoutingModule,
         TuiRootModule,
         BrowserAnimationsModule,
@@ -21,7 +24,10 @@ import { AccountModule } from './children/account/account.module';
         TuiNotificationsModule,
         AccountModule,
     ],
-    providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
+    providers: [
+        {provide: TUI_SANITIZER, useClass: NgDompurifySanitizer},
+        HttpClient
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

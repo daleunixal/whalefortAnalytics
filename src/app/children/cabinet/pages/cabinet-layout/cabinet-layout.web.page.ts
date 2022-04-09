@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, ContentChild, TemplateRef, ViewChildren } from '@angular/core';
 import { Template } from '@angular/compiler/src/render3/r3_ast';
+import { VkBehaviourService } from '../../../../services/vk-behaviour.service';
 
 @Component({
     templateUrl: './cabinet-layout.web.page.html',
@@ -14,7 +15,7 @@ export class CabinetLayoutWebPage{
     public content!: TemplateRef<any>
 
     constructor(
-        private _vk: VKBehav
+        private _vk: VkBehaviourService
     ) {
     }
 

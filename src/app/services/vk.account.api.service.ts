@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { VkBaseService } from './vk.base';
+import { VkBaseService } from './vk.base.service';
 
 @Injectable({
     providedIn: 'root'
