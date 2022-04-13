@@ -12,7 +12,7 @@ import { AuthorizedGuard } from './guards/authorized.guard';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,

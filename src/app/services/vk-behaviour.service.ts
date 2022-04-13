@@ -32,7 +32,7 @@ export class VkBehaviourService {
     }
 
     public authorize(): void{
-        window.open('https://oauth.vk.com/authorize?client_id=8131472&scope=215985366&redirect_uri=http://localhost:4200/access&response_type=token&revoke=1', '_self')
+        window.open('https://oauth.vk.com/authorize?client_id=8131472&scope=140488671&redirect_uri=http://localhost:4200/access&response_type=token&revoke=1', '_self')
     }
 
     public configureToken(paramString: string): Observable<boolean>{

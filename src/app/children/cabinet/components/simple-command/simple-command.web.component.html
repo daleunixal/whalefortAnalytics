@@ -1,0 +1,9 @@
+<form [formGroup]="form">
+    <wf-group-list validateCard [friendlist$]="getFriendList()" formControlName="ids">
+
+    </wf-group-list>
+    {{isValid}}
+</form>
+
+<button tuiButton (click)="setValue(['gamma', 'uta'])">SetValue</button>
+<button tuiButton (click)="getValue()">Get Value to log</button>

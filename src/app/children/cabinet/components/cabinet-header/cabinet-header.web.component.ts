@@ -42,7 +42,7 @@ export class CabinetHeaderWebComponent implements OnInit{
     }
 
     public copyToken(): void{
-
+        navigator.clipboard.writeText(this._vk.sessionSecret)
     }
 
     public switchBurger(): void{

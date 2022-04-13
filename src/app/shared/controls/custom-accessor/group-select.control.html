@@ -1,0 +1,23 @@
+<tui-multi-select
+
+    [formControl]="idControl"
+    [tuiTextfieldLabelOutside]="true"
+    [(search)]="search"
+    [stringify]="str"
+>
+    VK IDS
+    <tui-data-list-wrapper
+        *tuiDataList
+        tuiMultiSelectGroup
+        [items]="filter(search)"
+        [itemContent]="itemcont"
+    >
+    </tui-data-list-wrapper>
+</tui-multi-select>
+<input #delta (input)="onInput()" (blur)="onBlurCard()">
+
+
+
+<ng-template #itemcont let-data>
+    {{data.secondname + ' ' + data.firstname}}
+</ng-template>
